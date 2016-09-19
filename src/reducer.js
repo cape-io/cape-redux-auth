@@ -1,5 +1,6 @@
 import immutable from 'seamless-immutable'
 import constant from 'lodash/constant'
+import identity from 'lodash/identity'
 import { createReducer } from 'cape-redux'
 
 import {
@@ -31,7 +32,7 @@ function setUser(state, { error, payload }) {
     },
   })
 }
-const reducers = {
+export const reducers = {
   [LOGIN]: setUser,
   [LOGOUT]: constant(initialState),
   [PROVIDERS]: (state, { payload }) => state.set('provider', payload),
@@ -40,5 +41,6 @@ const reducers = {
   [TOKEN_VALIDATE]: state => state.set('tokenValidating', true),
   [USER_ID]: setUserId,
 }
-const reducer = createReducer(reducers, initialState, { skipErrors: false })
+export const opts = { skipErrors: false, actionPick: identity }
+const reducer = createReducer(reducers, initialState, opts)
 export default reducer
