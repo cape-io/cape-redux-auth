@@ -3,7 +3,7 @@ import property from 'lodash/property'
 import { select } from 'cape-select'
 
 export const selectAuth = property('auth')
-export const selectUser = select('user', selectAuth)
-export const isAuthenticated = select('authenticated', selectAuth)
+export const selectUser = select(selectAuth, 'user')
+export const isAuthenticated = select(selectAuth, 'authenticated')
 export const isAnonymous = negate(isAuthenticated)
-export const selectUid = select('id', selectUser)
+export const selectUid = select(selectUser, 'id')

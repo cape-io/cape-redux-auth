@@ -7,7 +7,7 @@ import {
   LOGIN, LOGOUT, PROVIDERS, TOKEN_SEND, TOKEN_SENT, TOKEN_VALIDATE, USER_ID,
 } from './actions'
 
-const initialState = immutable({
+export const initialState = immutable({
   auth: null,
   authenticated: false,
   sid: null,
