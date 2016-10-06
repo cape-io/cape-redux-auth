@@ -1,6 +1,7 @@
 import noop from 'lodash/noop'
 
 import { createAction } from 'cape-redux'
+import { createHistory } from 'redux-history-sync'
 
 export const PROVIDERS = 'auth/PROVIDERS'
 
@@ -12,10 +13,9 @@ export const LOGIN = 'auth/LOGIN'
 export const login = createAction(LOGIN)
 // Login and redirect.
 export function loginRedirect(user, destination) {
-  (dispatch) => {
+  return (dispatch) => {
     dispatch(login(user))
-    dispatch(login(destination))
-    return
+    dispatch(createHistory(destination))
   }
 }
 // Logout the user.
