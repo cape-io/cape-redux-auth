@@ -10,6 +10,14 @@ export const PROVIDERS = 'auth/PROVIDERS'
 // User object.
 export const LOGIN = 'auth/LOGIN'
 export const login = createAction(LOGIN)
+// Login and redirect.
+export function loginRedirect(user, destination) {
+  (dispatch) => {
+    dispatch(login(user))
+    dispatch(login(destination))
+    return
+  }
+}
 // Logout the user.
 export const LOGOUT = 'auth/LOGOUT'
 function logoutMeta() {
