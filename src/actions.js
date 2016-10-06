@@ -13,6 +13,7 @@ export const LOGIN = 'auth/LOGIN'
 export const login = createAction(LOGIN)
 // Login and redirect.
 export function loginRedirect(user, destination) {
+  if (!destination) throw new Error('loginRedirect requires a user obj and destination str.')
   return (dispatch) => {
     dispatch(login(user))
     dispatch(createHistory(destination))
