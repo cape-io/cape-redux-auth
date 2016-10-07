@@ -1,3 +1,7 @@
+## 1.1.1
+
+- `login({...user})` now correctly replaces the state.user with the payload instead of setting only id.
+
 ## 1.1.0
 
 - Decided to create a thunk action `loginRedirect(user, location)` to allow logging in and redirect using `redux-history-sync`.

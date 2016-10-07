@@ -27,9 +27,7 @@ function setUser(state, { error, payload }) {
     tokenSending,
     tokenValid: !error,
     tokenValidating,
-    user: {
-      id: payload.id,
-    },
+    user: payload,
   })
 }
 export const reducers = {
