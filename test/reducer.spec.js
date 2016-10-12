@@ -2,7 +2,13 @@ import test from 'tape'
 import { isFunction } from 'lodash'
 
 import reducer, { login } from '../src'
+import { defaultUser } from '../src/reducer'
 import { state2 } from './mock'
+
+test('initState', (t) => {
+  t.deepEqual(reducer(undefined, {}).user, defaultUser)
+  t.end()
+})
 
 test('reducer login', (t) => {
   t.ok(isFunction(reducer))
