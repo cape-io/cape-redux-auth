@@ -27,8 +27,8 @@ function logoutMeta() {
 export const logout = createAction(LOGOUT, noop, logoutMeta)
 
 // Set the sid cookie token.
-export const SET_SID = 'auth/SET_SID'
-export const setSid = createAction(SET_SID)
+export const TOKEN = 'auth/SET_TOKEN'
+export const setToken = createAction(TOKEN)
 // Email choice if user has more than one email. Must be associated with account.
 export const TOKEN_SEND = 'auth/TOKEN_SEND'
 export const tokenSend = createAction(TOKEN_SEND)
