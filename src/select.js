@@ -6,6 +6,7 @@ import { entitySelector } from 'redux-graph'
 export const selectAuth = property('auth')
 export const selectAuthUser = select(selectAuth, 'user')
 export const selectUid = select(selectAuthUser, 'id')
+export const selectToken = select(selectAuth, 'token')
 
 export const hasIdOnly = overEvery(
   flow(property('id'), isString),
