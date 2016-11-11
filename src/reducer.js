@@ -20,13 +20,14 @@ export const initialState = {
 }
 function setUser(state, { error, payload }) {
   const { authenticated, tokenSending, tokenValidating } = initialState
-  return state.merge({
+  return {
+    ...state,
     authenticated: error ? authenticated : true,
     tokenSending,
     tokenValid: !error,
     tokenValidating,
     user: payload,
-  })
+  }
 }
 function wPay(actionReducer) {
   return (state, action) => actionReducer(state, action.payload)
