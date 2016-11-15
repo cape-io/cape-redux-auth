@@ -1,4 +1,4 @@
-# cape-redux-auth v1.2.0
+# cape-redux-auth v2.1.0
 
 An example redux reducer for handling some authentication state.
 

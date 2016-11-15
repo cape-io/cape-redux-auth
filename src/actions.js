@@ -3,8 +3,6 @@ import noop from 'lodash/noop'
 import { createAction } from 'cape-redux'
 import { createHistory } from 'redux-history-sync'
 
-export const PROVIDERS = 'auth/PROVIDERS'
-
 // The comment above export defines the expected payload to the action creator.
 // No comment, no payload expected.
 

@@ -7,7 +7,7 @@ export const state = {
 export const state2 = {
   auth: null,
   authenticated: true,
-  sid: null,
+  token: null,
   tokenSent: false,
   tokenSending: false,
   tokenValid: true,

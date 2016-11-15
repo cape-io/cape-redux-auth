@@ -1,3 +1,9 @@
+## 2.1.0
+
+- Remove `sid` from reducer.
+- Handle `USER_NEW` in reducer.
+- Adjusted `isUserRef()`.
+
 ## 1.1.1
 
 - `login({...user})` now correctly replaces the state.user with the payload instead of setting only id.
