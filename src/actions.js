@@ -43,3 +43,4 @@ export const USER_ID = 'auth/USER_ID'
 export const setUserId = createAction(USER_ID)
 export const USER_NEW = 'auth/USER_NEW'
 export const userNew = createAction(USER_NEW)
+export const setUser = userNew
