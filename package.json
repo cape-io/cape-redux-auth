@@ -1,6 +1,6 @@
 {
   "name": "cape-redux-auth",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "A redux reducer for some authentication state.",
   "main": "lib/index.js",
   "author": "Kai Curry <kai@cape.io> (http://www.cape.io/)",
@@ -15,10 +15,10 @@
   },
   "license": "ISC",
   "dependencies": {
+    "@kaicurry/redux-graph": "^2.6.7",
     "cape-redux": "^2.2.1",
     "cape-select": "^2.3.1",
     "lodash": "^4.17.2",
-    "redux-graph": "^1.7.1",
     "redux-history-sync": "^3.0.1"
   },
   "peerDependencies": {
@@ -33,8 +33,8 @@
     "babel-preset-stage-1": "^6.16.0",
     "babel-tape-runner": "^2.0.1",
     "eslint": "^3.8.1",
-    "eslint-config-airbnb-base": "8.0.0",
-    "eslint-plugin-import": "^1.16.0",
+    "eslint-config-airbnb-base": "^10.0.1",
+    "eslint-plugin-import": "^2.2.0",
     "redux-thunk": "^2.1.0",
     "tape": "^4.6.2"
   }

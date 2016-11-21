@@ -1,9 +1,10 @@
 import test from 'tape'
 import { isFunction } from 'lodash'
 
-import reducer, { hasIdOnly, login, selectAuth, selectAuthUser, selectUser } from '../src'
+import reducer, { login, selectAuth, selectAuthUser, selectUser } from '../src'
+import { initialState } from '../src/reducer'
 
-import { state } from './mock'
+import { state, state2 } from './mock'
 
 test('selectAuth', (t) => {
   t.ok(isFunction(selectAuth))
@@ -15,22 +16,22 @@ test('selectAuthUser', (t) => {
   t.equal(selectAuthUser(state), state.auth.user)
   t.end()
 })
-const action = login({ id: 'kai' })
-const state2 = {
-  ...state,
-  auth: reducer(state.auth, action),
-}
-test('hasIdOnly', (t) => {
-  const usr = selectAuthUser(state)
-  t.false(hasIdOnly(usr))
-  t.true(selectAuthUser(state2))
-  t.end()
-})
 test('selectUser', (t) => {
-  t.equal(selectUser(state), state.auth.user)
-  t.deepEqual(state2.auth.user, { id: 'kai' }, 'sets user correctly')
-  const kai = state.graph.entity.kai
-  const usr = selectUser(state2)
-  t.equal(usr, kai, 'gets graph.entity[id]')
+  t.equal(selectUser(state), initialState.user)
+  t.equal(selectUser(state2), state2.auth.user)
+  const newUsr = { id: 'kai1', type: 'Person' }
+  const action = login(newUsr)
+  const ste3 = {
+    ...state2,
+    auth: reducer(state2.auth, action),
+  }
+  t.equal(ste3.auth.user, newUsr)
+  t.equal(selectUser(ste3), ste3.graph2.Person.kai1)
   t.end()
 })
+
+// const state2 = {
+//   ...state,
+//   auth: reducer(state.auth, action),
+// }
+//

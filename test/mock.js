@@ -1,16 +1,16 @@
 import { initialState } from '../src/reducer'
 
+const graph2 = { Person: { kai1: { id: 'kai1', type: 'Person', name: 'Kai Curry' } } }
+
 export const state = {
   auth: initialState,
-  graph: { entity: { kai: { id: 'kai', type: 'Person', name: 'Kai Curry' } } },
+  graph2,
 }
 export const state2 = {
-  auth: null,
-  authenticated: true,
-  token: null,
-  tokenSent: false,
-  tokenSending: false,
-  tokenValid: true,
-  tokenValidating: false,
-  user: { name: 'curry' },
+  auth: {
+    ...initialState,
+    authenticated: true,
+    user: { name: 'curry' },
+  },
+  graph2,
 }
